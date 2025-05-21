@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title mb-0">Détails des Responsables sécurité réseau</h4>
+                </div>
+                <div class="col-auto">
+                  <a href="/ajouterResponsable" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Ajouter Responsable sécurité réseau
+                  </a>
+                </div>
+                
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <input id="searchInput" class="form-control" placeholder="Rechercher un responsable..." type="search" [(ngModel)]="searchQuery">
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body pt-0">
+              <div class="table-responsive">
+                <table class="table mb-0 table-bordered table-hover" id="datatable_1" *ngIf="filteredResponsable.length > 0; else noResponsableTemplate">
+                  <thead class="table-light">
+                    <tr>
+                      <th>ID</th>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Email</th>
+                      <th>Rôle</th>
+                      <th>État</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let responsable of filteredResponsable">
+                      <td>{{responsable.id}}</td>
+                      <td>{{responsable.nom}}</td>
+                      <td>{{responsable.prenom}}</td>
+                      <td>{{responsable.email}}</td>
+                      <td>{{responsable.role}}</td>
+                      <td><span class="badge bg-success text-white">Active</span></td>
+                      <td class="text-center">
+                        <div class="d-flex justify-content-center gap-2">
+                          <a href="/modifierResponsable/{{responsable.id}}" class="btn btn-sm btn-outline-primary">
+                            <i class="las la-pen"></i> Modifier
+                          </a>
+                          <a href="#" (click)="DeleteResponsable(responsable)" class="btn btn-sm btn-outline-danger">
+                            <i class="las la-trash-alt"></i> Supprimer
+                          </a>
+                        </div>
+                      </td>
+                      
+                    </tr>
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+                <ng-template #noResponsableTemplate>
+                    <div class="alert alert-warning" role="alert">
+                      Il n'y a pas des responsable sécurité réseau.
+                    </div>
+                  </ng-template>
+              </div>
+            </div>
+          </div>
+        </div> <!-- end col -->
+      </div> <!-- end row -->
+    </div> <!-- container -->
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<!-- Optional JS if using DataTables or need filtering -->
+

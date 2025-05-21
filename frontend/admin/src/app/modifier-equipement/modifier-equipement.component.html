@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-header text-center">
+                 <h4 class="card-title">Modifier Equipement</h4>
+            </div>
+                <div class="card-body">
+                    <form (ngSubmit)="updateEquipement()"[formGroup]="updateForm">
+                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label">Nom</label>
+                                                <input type="text" class="form-control" placeholder="First Name" formControlName="nom">
+												<div *ngIf="nom?.touched && nom?.invalid">
+													<small class="text-danger" *ngIf="nom?.errors?.['required']">le nom
+														est obligatoire</small>
+												</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label">Etat</label>
+                                                <input type="etat" class="form-control" placeholder="Etat"formControlName="etat">
+												<div *ngIf="etat?.touched && etat?.invalid">
+													<small class="text-danger" *ngIf="etat?.errors?.['required']">l'etat'
+														est obligatoire</small>
+												</div>
+                                            </div>
+                                           
+                                            
+											
+											
+            
+                                        <button type="submit" class="btn btn-primary">Modifier</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                        </div>
+					</div>
+
+                </div>
+            </div>
+</div>
+<app-footer></app-footer>

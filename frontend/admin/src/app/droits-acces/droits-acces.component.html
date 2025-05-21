@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<div class="page-wrapper">
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4>Gestion des droits d'accès</h4>
+                </div><!-- end col -->
+              </div><!-- end row -->
+            </div><!-- end card-header -->
+
+            <!-- Table des droits -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Rôle</th>
+                    <th>Ressource</th> <!-- ✅ Nouvelle colonne -->
+                    <th>Voir</th>
+                    <th>Créer</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                    <th>traiter</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let droit of droitsAcces">
+                    <td>{{ droit.role }}</td>
+                    <td>{{ droit.ressource }}</td> <!-- ✅ Nouvelle colonne -->
+                    <td><input type="checkbox" [(ngModel)]="droit.voir" [disabled]="!editionActive" /></td>
+                    <td><input type="checkbox" [(ngModel)]="droit.creer" [disabled]="!editionActive" /></td>
+                    <td><input type="checkbox" [(ngModel)]="droit.modifier" [disabled]="!editionActive" /></td>
+                    <td><input type="checkbox" [(ngModel)]="droit.supprimer" [disabled]="!editionActive" /></td>
+                    <td><input type="checkbox" [(ngModel)]="droit.traiter" [disabled]="!editionActive" /></td>
+
+                  </tr>
+                </tbody>
+              </table>
+              <div *ngIf="droitsAcces.length === 0" class="alert alert-info">
+                Aucun droit d'accès disponible.
+              </div>
+              
+              <!-- Boutons d'action -->
+              <div class="button-group mt-3">
+                <button *ngIf="!editionActive" class="btn btn-primary" (click)="activerEdition()">Modifier les droits</button>
+                <div *ngIf="editionActive">
+                  <button class="btn btn-success me-2" (click)="enregistrerChangements()">Enregistrer</button>
+                  <button class="btn btn-secondary" (click)="annulerEdition()">Annuler</button>
+                </div>
+              </div>
+            </div><!-- end card-body -->
+
+          </div><!-- end card -->
+        </div><!-- end col-12 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end page-content -->
+</div><!-- end page-wrapper -->
+
+<app-footer></app-footer>

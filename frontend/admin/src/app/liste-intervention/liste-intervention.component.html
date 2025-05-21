@@ -1,0 +1,88 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title mb-0">Liste des Interventions</h4>
+                </div>
+						<div>
+				            <label class="d-flex align-items-center mb-0">
+								Search:
+								<input type="search" [(ngModel)]="searchQuery" class="form-control form-control-sm ml-2" placeholder="">
+								</label>
+							 </div>
+							</div>
+							
+							<!-- tab-content -->
+							<div class="tab-content" id="myTabContent-1">
+								<div class="tab-pane fade show active" id="bordered" role="tabpanel" aria-labelledby="home-tab-1">
+									<div class="card-body">
+										<!-- Omitted other content for brevity -->
+					
+										<!-- Conditionally display table or 'no intervention' message -->
+										<div *ngIf="filteredIntervention.length > 0; else noInterventionTemplate" class="table-responsive">
+
+											<table class="table table-bordered table-responsive-sm">
+									<thead>
+									  <tr>
+										<th>Id</th>
+										<th>Date</th>
+										<th>Description</th>
+										<th>Heure</th>
+										<th>Statut</th>
+										<th>Titre</th>
+										<th>Type</th>
+										<th>Createur Employes Id</th>
+										<th>Createur Technicien Id</th>
+										<th>Traiteur Technicien Id</th>	
+									  </tr>
+									</thead>
+									<tbody>
+									 <tr *ngFor="let intervention of filteredIntervention">
+                                        <td>{{ intervention.id }}</td>
+										<td>{{ intervention.date }}</td>
+										<td>{{ intervention.description }}</td>
+										<td>{{ intervention.heure }}</td>
+										<td>{{ intervention.statut }}</td>
+                                        <td>{{ intervention.titre }}</td>
+                                        <td>{{ intervention.type }}</td>
+                                        <td>{{ intervention.createurEmployeId }}</td>
+                                        <td>{{ intervention.createurTechnicienId }}</td>
+                                        <td>{{ intervention.traiteurTechnicienId }}</td>
+                                    </tr>	
+									</tbody>
+								  </table>
+								 
+										</div>
+										<!-- Template for 'no clients' message -->
+										<ng-template #noInterventionTemplate>
+											<div class="alert alert-warning" role="alert">
+												Pas d'intervention
+											</div>
+										</ng-template>
+									</div>
+								</div>
+								<!-- Other tabs -->
+							</div>
+							<!-- /tab-content -->
+						</div>
+					</div>
+					
+                    <!-- Column ends -->
+					
+				</div>
+				</div>
+					
+				</div>
+			</div>			
+        </div>
+      <app-footer></app-footer>
+
+        
+

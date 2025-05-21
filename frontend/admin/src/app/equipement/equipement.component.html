@@ -1,0 +1,86 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title mb-0">Détails des Equipements</h4>
+                </div>
+                <div class="col-auto">
+                  <a href="/ajouterEquipement" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Ajouter Equipement
+                  </a>
+                </div>
+                
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <input id="searchInput" class="form-control" placeholder="Rechercher un equipement..." type="search" [(ngModel)]="searchQuery">
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body pt-0">
+              <div class="table-responsive">
+                <table class="table mb-0 table-bordered table-hover" id="datatable_1" *ngIf="filteredEquipement.length > 0; else noEquipementTemplate">
+                  <thead class="table-light">
+                    <tr>
+                      <th>ID</th>
+                      <th>Nom</th>
+                      <th>État</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let equipement of filteredEquipement">
+                      <td>{{equipement.id}}</td>
+                      <td>{{equipement.nom}}</td>
+                      <td>{{equipement.etat}}</td>
+                      
+                      
+                      <td class="text-center">
+                        <div class="d-flex justify-content-center gap-2">
+                          <a href="/modifierEquipement/{{equipement.id}}" class="btn btn-sm btn-outline-primary">
+                            <i class="las la-pen"></i> Modifier
+                          </a>
+                          <a href="#" (click)="DeleteEquipement(equipement)" class="btn btn-sm btn-outline-danger">
+                            <i class="las la-trash-alt"></i> Supprimer
+                          </a>
+                          <a href="/majEquipement/{{equipement.id}}" class="btn btn-sm" style="border: 1px solid #3498db; color: #3498db;">
+                            <i class="la la-sync-alt"></i> MAJ
+                          </a>
+                          
+                          
+                        </div>
+                      </td>
+                      
+                    </tr>
+                   
+
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+                <ng-template #noEquipementTemplate>
+                    <div class="alert alert-warning" role="alert">
+                      Il n'y a pas d'equipements.
+                    </div>
+                  </ng-template>
+                  
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end col -->
+      </div> <!-- end row -->
+    </div> <!-- container -->
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<!-- Optional JS if using DataTables or need filtering -->
+

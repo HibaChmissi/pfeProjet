@@ -1,0 +1,21 @@
+<app-headerresp></app-headerresp>
+<div class="alertes-container">
+  <h2>📢 Alertes reçues</h2>
+
+  <div *ngFor="let alerte of alertes" class="alerte-card" [ngClass]="alerte.niveau.toLowerCase()">
+    <div class="alerte-header">
+      <span class="niveau">{{ alerte.niveau }}</span>
+      <span class="date">{{ alerte.dateHeure | date:'dd/MM/yyyy HH:mm' }}</span>
+    </div>
+    <p class="message">{{ alerte.message }}</p>
+
+    <div class="alerte-actions">
+      <span *ngIf="alerte.vue" class="vue">✅ Vue</span>
+      <button *ngIf="!alerte.vue" (click)="marquerCommeVue(alerte.id)" class="btn-marquer">
+        👁️ Marquer comme vue
+      </button>
+    </div>
+  </div>
+</div>
+
+

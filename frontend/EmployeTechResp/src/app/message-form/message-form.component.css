@@ -1,0 +1,85 @@
+/* Conteneur principal du formulaire */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* En-tête */
+.form-title-wrapper {
+    background-color: #0066cc;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 40px;
+  }
+  
+  .form-title {
+    color: white;
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* Étiquettes */
+  label {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  /* Champs */
+  .form-control:focus {
+    border-color: #0069d9 !important;
+    box-shadow: 0 0 5px rgba(0, 105, 217, 0.5) !important;
+    outline: none;
+  }
+  input.form-control,
+  textarea.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input.form-control.ng-invalid.ng-touched,
+  textarea.form-control.ng-invalid.ng-touched {
+    border-color: #e74c3c;
+  }
+  
+ 
+  
+ /* Messages d'erreur */
+.text-danger {
+    color: #dc3545;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+/* Bouton */
+form button[type="submit"] {
+    background-color: #99c2ff;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 0 0 12px 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #4d94ff;
+  }
+  

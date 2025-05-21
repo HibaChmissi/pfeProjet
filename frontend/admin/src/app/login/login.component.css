@@ -1,0 +1,45 @@
+
+/* Pour le fond header (noir => blanc) */
+.bg-black {
+    background-color: #ffffff !important;
+}
+
+/* Pour le bouton "Log In" en bleu */
+.btn-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+.btn-primary:hover {
+    background-color: #0069d9 !important;
+    border-color: #0062cc !important;
+}
+
+/* Pour les inputs Username et Password au focus */
+.form-control:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Pour le switch Remember me */
+.form-check-input:checked {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+.form-check-input:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Couleur du cercle (le thumb du switch) */
+.form-check-input:checked::before {
+    background-color: #ffffff !important; /* rond blanc */
+    border-color: #007bff !important;      /* bord bleu autour du rond */
+}
+
+
+
+/* Modifier le cercle intérieur */
+.form-check-input:checked::after {
+    background-color: #ffffff !important; /* Rond blanc */
+    border: 2px solid #007bff !important; /* Bordure bleue autour du rond */
+}

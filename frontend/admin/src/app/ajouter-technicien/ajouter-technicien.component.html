@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-header text-center">
+              <h4 class="card-title mb-0">Ajouter un Technicien</h4>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="addNewTechnicien()" [formGroup]="TechnicienForm" novalidate>
+                <div class="mb-3">
+                  <label for="nom" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="nom" formControlName="nom">
+                  <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">Nom requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="prenom" class="form-label">Prénom</label>
+                  <input type="text" class="form-control" id="prenom" formControlName="prenom">
+                  <div *ngIf="prenom?.invalid && prenom?.touched" class="text-danger">Prénom requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" formControlName="email">
+                  <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                    Email valide requis.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="role" class="form-label">Rôle</label>
+                  <input type="text" class="form-control" id="role" formControlName="role">
+                  <div *ngIf="role?.invalid && role?.touched" class="text-danger">Rôle requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de Passe</label>
+                  <input type="password" class="form-control" id="password" formControlName="mot_de_passe">
+
+                </div>
+
+                <div class="mb-3">
+                  <label for="confirmPassword" class="form-label">Confirmer le Mot de Passe</label>
+                  <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+                  <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="text-danger">
+                    Confirmation requise.
+                  </div>
+                  <div *ngIf="TechnicienForm.errors?.['mismatch'] && confirmPassword?.touched" class="text-danger">
+                    Les mots de passe ne correspondent pas.
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Ajouter le technicien
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

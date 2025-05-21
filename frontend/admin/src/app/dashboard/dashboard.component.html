@@ -1,0 +1,48 @@
+
+<app-header></app-header>
+<section id="dashboard-summary" style="margin-top: 80px; margin-left: 280px; padding: 30px; padding-top: 50px;">
+  <div class="container">
+    <div class="card rounded shadow p-4 bg-white">
+     
+
+      <div class="row text-center">
+        <!-- Bloc Interventions -->
+        <div class="col-md-4 border-end">
+          <div class="mb-3">
+            <i class="fas fa-tools fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
+
+          </div>
+          <h5>Interventions</h5>
+          <p class="text-3xl font-bold" style="color: #007bff;">{{ total }}</p>
+          <small class="text-muted">En cours : {{ en_cours }} | Terminées : {{ terminee }} | En attente : {{en_attente}}</small>
+        </div>
+
+        <!-- Bloc Utilisateurs -->
+        <div class="col-md-4 border-end">
+          <div class="mb-3">
+            <i class="fas fa-users fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
+
+          </div>
+          <h5>Utilisateurs</h5>
+          <p class="text-3xl font-bold" style="color: #007bff;">{{ totalUtilisateurs }}</p>
+          <small class="text-muted">
+            Techniciens : {{ techniciens }}<br>
+            Employés : {{ employes }}<br>
+            Responsable Séc. Réseau : {{ responsables }}
+          </small>
+        </div>
+
+        <!-- Bloc Équipements -->
+        <div class="col-md-4">
+          <div class="mb-3">
+            <i class="fas fa-network-wired fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
+
+          </div>
+          <h5>Équipements</h5>
+          <p class="text-3xl font-bold" style="color: #007bff;">{{ totalEquipements }}</p>
+          <small class="text-muted">Actifs : {{ active }} | Inactifs : {{ inactive }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

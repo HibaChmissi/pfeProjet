@@ -1,0 +1,87 @@
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control,
+.form-select {
+  flex: 1;
+  min-width: 0;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #007bff !important;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5) !important;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.container {
+  margin-top: 2rem;
+}
+
+h3, h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+textarea,
+select,
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 8px 16px;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0069d9;
+}
+
+ul.list-group {
+  margin-top: 1rem;
+}
+
+li.list-group-item {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}

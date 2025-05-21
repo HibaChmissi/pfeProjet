@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div class="card message-card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title">
+                    <span class="icon-envelope"></span>
+                    Liste Des Messages
+                  </h4>
+                </div>
+                <div>
+                  <div class="search-container">
+                    <span class="search-icon">⌕</span>
+                    <input type="search" [(ngModel)]="searchQuery" 
+                           class="search-input" placeholder="Rechercher...">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div *ngIf="filteredMessages.length > 0; else noMessagesTemplate" class="table-container">
+                <table class="message-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Nom</th>
+                      <th>Email</th>
+                      <th>Sujet</th>
+                      <th>Message</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let message of filteredMessages | paginate: { itemsPerPage: 10, currentPage: p }; let i = index"
+                        class="message-row">
+                      <td>{{ message.id }}</td>
+                      <td>{{ message.nom }}</td>
+                      <td>
+                        <a href="mailto:{{message.email}}" class="email-link">
+                          {{ message.email }}
+                        </a>
+                      </td>
+                      <td>
+                        <span class="subject-badge">{{ message.sujet }}</span>
+                      </td>
+                      <td class="message-text">{{ message.message }}</td>
+                      <td>
+                        <button (click)="deleteMessage(message)" 
+                                class="delete-btn">
+                          Supprimer
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <div class="pagination-container">
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+              </div>
+
+              <ng-template #noMessagesTemplate>
+                <div class="empty-state">
+                  <div class="empty-icon">✉️</div>
+                  <h5>Aucun message trouvé</h5>
+                  <p>Essayez de modifier vos critères de recherche</p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

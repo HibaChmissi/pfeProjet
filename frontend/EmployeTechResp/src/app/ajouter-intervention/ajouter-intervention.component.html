@@ -1,0 +1,64 @@
+<app-headerdash></app-headerdash>
+
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <form (ngSubmit)="addNewIntervention()" [formGroup]="InterventionForm" novalidate>
+        
+        <!-- Titre -->
+        <div class="form-title-wrapper">
+          <h4 class="form-title">Créer une Intervention</h4>
+        </div>
+
+        <!-- Champ Titre -->
+        <label for="titre">Titre</label>
+        <input
+          id="titre"
+          type="text"
+          formControlName="titre"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': titre?.invalid && titre?.touched }"
+        />
+        <div *ngIf="titre?.invalid && titre?.touched" class="text-danger">Titre requis.</div>
+
+        <!-- Champ Type -->
+        <label for="type">Type</label>
+        <input
+          id="type"
+          type="text"
+          formControlName="type"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': type?.invalid && type?.touched }"
+        />
+        <div *ngIf="type?.invalid && type?.touched" class="text-danger">Type requis.</div>
+
+        <!-- Champ Statut -->
+        <label for="statut">Statut</label>
+        <input
+          id="statut"
+          type="text"
+          formControlName="statut"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': statut?.invalid && statut?.touched }"
+        />
+        <div *ngIf="statut?.invalid && statut?.touched" class="text-danger">Statut requis.</div>
+
+        <!-- Champ Description -->
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          rows="4"
+          formControlName="description"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': description?.invalid && description?.touched }"
+        ></textarea>
+        <div *ngIf="description?.invalid && description?.touched" class="text-danger">Description requise.</div>
+
+        <!-- Bouton -->
+        <button type="submit">Créer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

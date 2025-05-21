@@ -1,0 +1,64 @@
+<app-headerdash></app-headerdash>
+
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <form (ngSubmit)="onSubmit()" [formGroup]="messageForm" novalidate>
+
+        <!-- Titre du formulaire -->
+        <div class="form-title-wrapper">
+          <h4 class="form-title">Envoyer un Message</h4>
+        </div>
+
+        <!-- Champ Nom -->
+        <label for="nom">Nom</label>
+        <input
+          id="nom"
+          type="text"
+          formControlName="nom"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': nom?.invalid && nom?.touched }"
+        />
+        <div *ngIf="nom?.invalid && nom?.touched" class="text-danger">Nom requis.</div>
+
+        <!-- Champ Email -->
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': email?.invalid && email?.touched }"
+        />
+        <div *ngIf="email?.invalid && email?.touched" class="text-danger">Email valide requis.</div>
+
+        <!-- Champ Sujet -->
+        <label for="sujet">Sujet</label>
+        <input
+          id="sujet"
+          type="text"
+          formControlName="sujet"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': sujet?.invalid && sujet?.touched }"
+        />
+        <div *ngIf="sujet?.invalid && sujet?.touched" class="text-danger">Sujet requis.</div>
+
+        <!-- Champ Message -->
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          rows="4"
+          formControlName="message"
+          class="form-control"
+          [ngClass]="{ 'ng-invalid ng-touched': message?.invalid && message?.touched }"
+        ></textarea>
+        <div *ngIf="message?.invalid && message?.touched" class="text-danger">Message requis.</div>
+
+        <!-- Bouton -->
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

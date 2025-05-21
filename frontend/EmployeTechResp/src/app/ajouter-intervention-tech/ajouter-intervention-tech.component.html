@@ -1,0 +1,49 @@
+<app-header1></app-header1>
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+    
+      <div class="form-title-wrapper">
+        <h4 class="form-title">Créer une intervention</h4>
+      </div>
+            <div class="card-body">
+              <form (ngSubmit)="addNewIntervention()" [formGroup]="InterventionForm" novalidate>
+                
+                <div class="mb-3">
+                  <label for="titre" class="form-label">Titre</label>
+                  <input type="text" class="form-control" id="titre" formControlName="titre">
+                  <div *ngIf="titre?.invalid && titre?.touched" class="text-danger">Titre requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="type" class="form-label">Type</label>
+                  <input type="text" class="form-control" id="type" formControlName="type">
+                  <div *ngIf="type?.invalid && type?.touched" class="text-danger">Type requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="statut" class="form-label">Statut</label>
+                  <input type="text" class="form-control" id="statut" formControlName="statut">
+                  <div *ngIf="statut?.invalid && statut?.touched" class="text-danger">Statut requis.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" formControlName="description"></textarea>
+                  <div *ngIf="description?.invalid && description?.touched" class="text-danger">Description requise.</div>
+                </div>
+
+                
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Créer 
+                  </button>
+                </div>
+              </form>
+            </div>
+          
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

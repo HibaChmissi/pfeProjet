@@ -1,0 +1,32 @@
+/* Style du bouton bleu */
+.btn-blue {
+    background-color: #07a7f7; /* Bleu Bootstrap */
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover : quand la souris passe sur le bouton */
+.btn-blue:hover {
+    background-color: #07a7f7; /* Bleu un peu plus foncé */
+}
+.btn-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: white !important;
+  }
+  
+
+
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff !important; /* Bleu vif */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5) !important; /* Effet lumineux */
+  }

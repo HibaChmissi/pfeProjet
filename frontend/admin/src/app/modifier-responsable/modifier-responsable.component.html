@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-header text-center">
+                 <h4 class="card-title">Modifier Responsable sécurité réseau</h4>
+            </div>
+                <div class="card-body">
+                    <form (ngSubmit)="updateResponsable()"[formGroup]="updateForm">
+                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label">Nom</label>
+                                                <input type="text" class="form-control" placeholder="First Name" formControlName="nom">
+												<div *ngIf="nom?.touched && nom?.invalid">
+													<small class="text-danger" *ngIf="nom?.errors?.['required']">le nom
+														est obligatoire</small>
+												</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label">Prenom</label>
+                                                <input type="email" class="form-control" placeholder="Email"formControlName="prenom">
+												<div *ngIf="prenom?.touched && prenom?.invalid">
+													<small class="text-danger" *ngIf="prenom?.errors?.['required']">le prenom
+														est obligatoire</small>
+												</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="form-label">Email</label>
+                                                <input type="text" class="form-control" placeholder="Password"formControlName="email">
+												<div *ngIf="email?.touched && email?.invalid">
+													<small class="text-danger" *ngIf="email?.errors?.['required']">L email
+														est obligatoire</small>
+														<small class="text-danger" *ngIf="email?.errors?.['email']">Respecter le format email</small>
+												</div>
+                                            </div>
+											<div class="mb-3 col-md-6">
+												<label>Mot de Passe</label>
+												<input type="password" class="form-control" formControlName="password">
+												<div *ngIf="password?.touched && password?.invalid">
+													<small class="text-danger" *ngIf="password?.errors?.['required']">
+														Le mot de passe est obligatoire
+													</small>
+													<small class="text-danger" *ngIf="password?.errors?.['maxlength']">
+														Maximum 8 caractères
+													</small>
+												</div>
+											</div>
+											
+                                       
+                                        <button type="submit" class="btn btn-primary">Modifier</button>
+                                  </div>
+                                </form>
+                </div>
+                            </div>
+                        </div>
+					</div>
+
+                </div>
+            </div>
+</div>
+<app-footer></app-footer>

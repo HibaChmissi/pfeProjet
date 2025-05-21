@@ -1,0 +1,84 @@
+.alertes-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9fbfc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alertes-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.alerte-card {
+  border-left: 6px solid gray;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.alerte-card:hover {
+  transform: scale(1.01);
+}
+
+.alerte-card.info {
+  border-color: #2196f3;
+}
+.alerte-card.warning {
+  border-color: #ff9800;
+}
+.alerte-card.critique {
+  border-color: #f44336;
+}
+
+.alerte-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.niveau {
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.message {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.vue {
+  color: green;
+  font-weight: bold;
+}
+
+.non-vue {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-marquer {
+  background-color: #aab3bc;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-marquer:hover {
+  background-color: #aab3bc;
+}

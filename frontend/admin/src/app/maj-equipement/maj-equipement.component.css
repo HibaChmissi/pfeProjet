@@ -1,0 +1,19 @@
+
+
+  
+  input.form-control:focus {
+    outline: none;
+    border-color: #007bff !important;      /* Bleu vif */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5) !important; /* Effet lumineux */
+  }
+  
+  .btn-blue:hover {
+    background-color: #07a7f7; /* Bleu un peu plus foncé */
+}
+
+.btn-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: white !important;
+  }
+  
