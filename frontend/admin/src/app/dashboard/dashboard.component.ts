@@ -26,6 +26,14 @@ export class DashboardComponent implements OnInit {
   active: number = 0;
   inactive: number = 0;
 
+// Données des alertes
+  totalAlertes: number = 0;
+  INFO: number = 0;
+  WARNING: number = 0;
+  CRITIQUE: number = 0;
+// Données des messages
+  totalMessages: number=0;
+ 
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
@@ -44,6 +52,19 @@ export class DashboardComponent implements OnInit {
       this.en_attente = data.filter(i => i.statut?.toLowerCase() === 'en attente').length;
     });
   
+//alertes
+    this.crudService.getAlertes().subscribe(data => {
+      console.log("Alerte exemple :", data[0]);
+      this.totalAlertes = data.length;
+  
+      data.forEach((a, index) => {
+        console.log(`Alerte ${index + 1}:`, a); // 🧪 Étape 2 : voir les champs exacts
+      });
+  
+      this.INFO = data.filter(a => a.niveau?.toLowerCase() === 'INFO').length;
+      this.WARNING = data.filter(a => a.niveau?.toLowerCase() === 'WARNIN').length;
+      this.CRITIQUE = data.filter(a => a.niveau?.toLowerCase() === 'CRITIQUE').length;
+    });
   
 
     // Appels CRUD pour récupérer les données des utilisateurs
@@ -68,10 +89,17 @@ export class DashboardComponent implements OnInit {
       this.active = data.filter(e => e.etat ?.toLowerCase()=== 'active').length;
       this.inactive = data.filter(e => e.etat ?.toLowerCase() === 'inactive').length;
     });
+
+    this.crudService.getMessages().subscribe(data => {
+      this.totalMessages = data.length;
+    });
   }
 
   updateTotalUtilisateurs(): void {
     // Met à jour le total des utilisateurs
     this.totalUtilisateurs = this.techniciens + this.employes + this.responsables;
   }
+
+
+ 
 }

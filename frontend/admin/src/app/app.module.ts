@@ -34,6 +34,8 @@ import { UtilisateurResumeComponent } from './utilisateur-resume/utilisateur-res
 import { EquipementsResumeComponent } from './equipements-resume/equipements-resume.component';
 import { ListMessageComponent } from './list-message/list-message.component';
 import { AlertesComponent } from './alertes/alertes.component';
+import { AlerteResumeComponent } from './alerte-resume/alerte-resume.component';
+import { MessageResumeComponent } from './message-resume/message-resume.component';
 
 
 
@@ -69,6 +71,8 @@ import { AlertesComponent } from './alertes/alertes.component';
    EquipementsResumeComponent,
    ListMessageComponent,
    AlertesComponent,
+   AlerteResumeComponent,
+   MessageResumeComponent,
     
    
   ],

@@ -29,7 +29,7 @@ export class AlertesComponent {
 const alerte = {
   message: this.alerteForm.value.message,
   niveau: this.alerteForm.value.niveau,
-  adminId: { id: adminId }, // correspond à l'objet attendu côté backend
+  admin: { id: Number(adminId) }, // correspond à l'objet attendu côté backend
   date: new Date(),
   vue: false
 };

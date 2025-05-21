@@ -1,223 +1,31 @@
-html {
-  scroll-behavior: smooth;
-}
-
-.blue-title {
-  color: rgb(0, 221, 255);
-}
-
-.contact {
-  padding: 40px 0;
-}
-
-.section-title {
-  text-align: center;
-}
-
-.info i {
-  font-size: 24px;
-  color: #007bff;
-}
-
-/* Services Section Styling */
-#services {
-padding: 80px 0;
-background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-position: relative;
-overflow: hidden;
-}
-
-#services::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDUsMjQ1LDI0NSwwLjEpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+') repeat;
-opacity: 0.6;
-z-index: 0;
-}
-
-.section-title {
-position: relative;
-z-index: 1;
-}
-
-.section-title h2 {
-font-size: 2.5rem;
-font-weight: 700;
-text-transform: uppercase;
-margin-bottom: 20px;
-color: #2c3e50;
-position: relative;
-display: inline-block;
-}
-
-.section-title h2::after {
-content: '';
-position: absolute;
-display: block;
-width: 50px;
-height: 3px;
-background: #3498db;
-bottom: -10px;
-left: 50%;
-transform: translateX(-50%);
-}
-
-.section-title p {
-font-size: 1.1rem;
-color: #7f8c8d;
-max-width: 700px;
-margin: 0 auto 40px;
-}
-
-/* Icon Box Styling */
-.icon-box {
-background: white;
-border-radius: 10px;
-padding: 30px;
-text-align: center;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-transition: all 0.3s ease-in-out;
-position: relative;
-z-index: 1;
-height: 100%;
-border: 1px solid rgba(0, 0, 0, 0.05);
-overflow: hidden;
-}
-
-.icon-box:hover {
-transform: translateY(-10px);
-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.icon-box::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
-z-index: -1;
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-.icon-box:hover::before {
-opacity: 1;
-}
-
-.icon-box .icon {
-margin: 0 auto 20px;
-width: 80px;
-height: 80px;
-background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.3s ease;
-}
-
-.icon-box:hover .icon {
-transform: scale(1.1);
-box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
-}
-
-.icon-box .icon i {
-color: white;
-font-size: 32px;
-transition: all 0.3s ease;
-}
-
-.icon-box:hover .icon i {
-transform: rotateY(360deg);
-}
-
-.icon-box h4 {
-font-weight: 600;
-margin-bottom: 15px;
-font-size: 1.3rem;
-color: #2c3e50;
-}
-
-.icon-box h4 a {
-color: inherit;
-text-decoration: none;
-transition: color 0.3s ease;
-}
-
-.icon-box:hover h4 a {
-color: #3498db;
-}
-
-.icon-box p {
-line-height: 1.6;
-color: #7f8c8d;
-font-size: 0.95rem;
-margin-bottom: 0;
-}
-
-/* Animation Classes */
-@keyframes fadeInUp {
-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-}
-
-.icon-box {
-animation: fadeInUp 0.6s ease forwards;
-opacity: 0;
-}
-
-.icon-box:nth-child(1) {
-animation-delay: 0.2s;
-}
-
-.icon-box:nth-child(2) {
-animation-delay: 0.4s;
-}
-
-.icon-box:nth-child(3) {
-animation-delay: 0.6s;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-.icon-box {
-  padding: 25px;
-}
-}
-
-@media (max-width: 768px) {
-#services {
-  padding: 60px 0;
-}
-
-.section-title h2 {
-  font-size: 2rem;
-}
-
-.icon-box {
-  margin-bottom: 30px;
-}
-}
-
-
-
-
-
+/* Forcer toutes les icônes en bleu */
+.card i,
 .text-primary {
-  color: #007bff; /* Bleu */
+  color: #007bff !important; /* BLEU forcé */
 }
 
+/* Forcer tous les nombres/chiffres */
+.stat-number {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff !important; /* BLEU forcé */
+}
 
+/* Uniformiser les petits textes sous les chiffres */
+.card small {
+  color: #a6bbdc !important; /* bleu doux au lieu de text-muted/vert */
+}
 
+/* Harmoniser les cartes */
+.dashboard-card {
+  min-height: 220px;
+  border: 1px solid #d0e3ff;
+  background-color: #f8fbff;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
+}

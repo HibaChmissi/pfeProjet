@@ -1,48 +1,69 @@
-
 <app-header></app-header>
 <section id="dashboard-summary" style="margin-top: 80px; margin-left: 280px; padding: 30px; padding-top: 50px;">
   <div class="container">
-    <div class="card rounded shadow p-4 bg-white">
-     
+    <div class="row g-4 justify-content-center"> <!-- Centrage horizontal -->
 
-      <div class="row text-center">
-        <!-- Bloc Interventions -->
-        <div class="col-md-4 border-end">
+      <!-- Carte : Interventions -->
+      <div class="col-md-4 d-flex">
+        <div class="card dashboard-card text-center shadow-sm p-4 w-100">
           <div class="mb-3">
-            <i class="fas fa-tools fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
-
+            <i class="fas fa-tools fa-2x text-primary" style="color: #007bff;"></i>
           </div>
           <h5>Interventions</h5>
-          <p class="text-3xl font-bold" style="color: #007bff;">{{ total }}</p>
-          <small class="text-muted">En cours : {{ en_cours }} | Terminées : {{ terminee }} | En attente : {{en_attente}}</small>
+          <p class="stat-number text-primary">{{ total }}</p>
+          <small class="text-muted">En cours : {{ en_cours }} | Terminées : {{ terminee }} | En attente : {{ en_attente }}</small>
         </div>
+      </div>
 
-        <!-- Bloc Utilisateurs -->
-        <div class="col-md-4 border-end">
+      <!-- Carte : Utilisateurs -->
+      <div class="col-md-4 d-flex">
+        <div class="card dashboard-card text-center shadow-sm p-4 w-100">
           <div class="mb-3">
-            <i class="fas fa-users fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
-
+            <i class="fas fa-users fa-2x text-primary" style="color: #007bff;"></i>
           </div>
           <h5>Utilisateurs</h5>
-          <p class="text-3xl font-bold" style="color: #007bff;">{{ totalUtilisateurs }}</p>
+          <p class="stat-number text-primary">{{ totalUtilisateurs }}</p>
           <small class="text-muted">
-            Techniciens : {{ techniciens }}<br>
-            Employés : {{ employes }}<br>
-            Responsable Séc. Réseau : {{ responsables }}
+            Techniciens : {{ techniciens }} | Employés : {{ employes }} | Responsables : {{ responsables }}
           </small>
         </div>
+      </div>
 
-        <!-- Bloc Équipements -->
-        <div class="col-md-4">
+      <!-- Carte : Équipements -->
+      <div class="col-md-4 d-flex">
+        <div class="card dashboard-card text-center shadow-sm p-4 w-100">
           <div class="mb-3">
-            <i class="fas fa-network-wired fa-2x" style="color: #007bff;"></i> <!-- Bleu classique -->
-
+            <i class="fas fa-network-wired fa-2x text-primary" style="color: #007bff;"></i>
           </div>
           <h5>Équipements</h5>
-          <p class="text-3xl font-bold" style="color: #007bff;">{{ totalEquipements }}</p>
+          <p class="stat-number text-primary">{{ totalEquipements }}</p>
           <small class="text-muted">Actifs : {{ active }} | Inactifs : {{ inactive }}</small>
         </div>
       </div>
+
+      <!-- Carte : Alertes -->
+      <div class="col-md-4 d-flex">
+        <div class="card dashboard-card text-center shadow-sm p-4 w-100">
+          <div class="mb-3">
+            <i class="fas fa-bell fa-2x text-primary" style="color: #007bff;"></i>
+          </div>
+          <h5>Alertes</h5>
+          <p class="stat-number text-primary">{{ totalAlertes }}</p>
+          <small class="text-muted">INFO: {{ INFO }} | WARNING: {{ WARNING }} | CRITIQUE : {{ CRITIQUE }}</small>
+        </div>
+      </div>
+
+      <!-- Carte : Messages -->
+      <div class="col-md-4 d-flex">
+        <div class="card dashboard-card text-center shadow-sm p-4 w-100">
+          <div class="mb-3">
+            <i class="fas fa-envelope fa-2x text-primary" style="color: #007bff;"></i>
+          </div>
+          <h5>Messages</h5>
+          <p class="stat-number text-primary">{{ totalMessages }}</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
