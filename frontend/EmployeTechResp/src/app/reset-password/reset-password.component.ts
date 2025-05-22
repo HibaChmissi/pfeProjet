@@ -37,12 +37,16 @@ export class ResetPasswordComponent {
         return;
     }
 
-    this.http.post(url, { email: this.email }).subscribe({
-      next: () => {
-        this.success = true;
-        console.log("✅ Instructions envoyées avec succès");
-      },
-     
-    });
+   this.http.post(url, { email: this.email }, { responseType: 'text' }).subscribe({
+  next: (response) => {
+    this.success = true;
+    console.log("✅ Réponse du serveur :", response);
+  },
+  error: (err) => {
+    this.error = true;
+    console.error("❌ Erreur lors de l'envoi :", err);
+  }
+});
+
   }
 }
