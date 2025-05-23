@@ -37,9 +37,13 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+          "styles": [
+            "src/assets/css/bootstrap.min.css",
+            "src/assets/css/icons.min.css",
+            "src/assets/css/app.min.css",
+            "src/assets/libs/jsvectormap/css/jsvectormap.min.css",
+            "src/styles.css"
+            ]
             "scripts": []
           },
           "configurations": {
